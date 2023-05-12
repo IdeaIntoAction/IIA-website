@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "eslint --ext .js,.vue src",
     "format": "prettier --config .prettierrc --write \"src/**/*.{js,vue}\"",
-    "js-format": "prettier --write \"src/**/*.{js,vue}\""
+    "js-format": "prettier --write \"src/**/*.{js,vue}\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -27,6 +28,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^8.7.1",
+    "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1"
   },
