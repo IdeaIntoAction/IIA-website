@@ -2,7 +2,7 @@
   <div class="registration-form">
     <form @submit.prevent="register">
       <input type="email" v-model="email" placeholder="Email" />
-      <input type="password" v-model="password" placeholder="Пароль" />
+      <input type="password" v-model="password" placeholder="Password" />
       <button type="submit">Registration</button>
     </form>
   </div>
