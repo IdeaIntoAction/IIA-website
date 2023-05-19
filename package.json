@@ -16,7 +16,8 @@
     "core-js": "^3.8.3",
     "postcss": "^8",
     "vue": "^3.2.13",
-    "vue-router": "^4.2.0"
+    "vue-router": "^4.2.0",
+    "vuetify": "^3.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -35,6 +36,7 @@
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
+    "pug-plain-loader": "^1.1.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "webpack": "^5.82.1"

@@ -10,7 +10,6 @@
 
 <script>
 import { createUser } from '../services/api'
-// import axios from 'axios'
 export default {
   data() {
     return {
@@ -20,20 +19,19 @@ export default {
   },
   methods: {
     register() {
-      const { email, password } = this;
-      createUser(email, password).then((response) => {
-        console.log(response.data.token)
-        this.$router.push('/account')
-        return localStorage.setItem('sessionToken', response.data.token)
-      })
-      .catch((error) => {
+      const { email, password } = this
+      createUser(email, password)
+        .then((response) => {
+          console.log(response.data.token)
+          this.$router.push('/createPosts')
+          return localStorage.setItem('sessionToken', response.data.token)
+        })
+        .catch((error) => {
           console.error(error)
-      })
+        })
     },
   },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

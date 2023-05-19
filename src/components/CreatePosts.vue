@@ -21,13 +21,14 @@ export default {
 
   methods: {
     newPost() {
-      const {title, content} = this
-      createPost(title, content,).then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
+      const { title, content } = this
+      createPost(title, content)
+        .then((response) => {
+          console.log(response)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
     },
   },
 }
