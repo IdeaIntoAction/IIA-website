@@ -7,6 +7,7 @@
       <div class="post">{{ title }}</div>
       <button type="submit">click</button>
     </form>
+    <div v-if="error" class="errorMessage">{{ error }}</div>
   </div>
 </template>
 <script>
@@ -18,6 +19,7 @@ export default {
       postId: '',
       title: '',
       content: '',
+      error: ''
     }
   },
   methods: {

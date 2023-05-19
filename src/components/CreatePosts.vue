@@ -6,6 +6,7 @@
       <input type="content" placeholder="content" v-model="content" />
       <button type="submit">New Post</button>
     </form>
+    <div v-if="error" class="errorMessage">{{ error }}</div>
   </div>
 </template>
 
@@ -17,6 +18,7 @@ export default {
     return {
       title: '',
       content: '',
+      error: ''
     }
   },
 

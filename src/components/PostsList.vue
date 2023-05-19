@@ -6,6 +6,7 @@
         <button @click="goEditPost(post.id)">edit post</button>
       </li>
     </ul>
+    <div v-if="error" class="errorMessage">{{ error }}</div>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ export default {
   data() {
     return {
       posts: [],
+      error: ''
     }
   },
   methods: {
