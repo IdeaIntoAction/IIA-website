@@ -3,7 +3,7 @@
     <ul>
       <li v-for="post in posts" :key="post.id">
         {{ post.title }} - {{ post.content }}
-        <button @click="goEditPost(post.id)" >edit post</button>
+        <button @click="goEditPost(post.id)">edit post</button>
       </li>
     </ul>
   </div>
@@ -11,6 +11,7 @@
 
 <script>
 import { postsList } from '../services/api'
+import { handleRequestError } from '../services/errorHandler';
 export default {
   data() {
     return {
@@ -19,12 +20,12 @@ export default {
   },
   methods: {
     goEditPost(postId) {
-        try {
-            this.$router.push({ path: `/editPosts/${postId}` });
-        } catch (error) {
-            console.error(error);
-        }
-    }
+      try {
+        this.$router.push({ path: `/editPosts/${postId}` })
+      } catch (error) {
+        console.error(error)
+      }
+    },
   },
   mounted() {
     postsList()
@@ -32,21 +33,10 @@ export default {
         this.posts = response.data.posts
       })
       .catch((error) => {
-        console.error(error)
+        handleRequestError.call(this, error);
       })
   },
 }
 </script>
 
-<style>
-ul {
-  list-style: none;
-  width: 500px;
-  display: block;
-  margin: 0 auto;
-}
-li {
-  font-size: 20px;
-  text-align: center;
-}
-</style>
+<style></style>

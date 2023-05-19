@@ -20,9 +20,8 @@ const routes = [
   },
   {
     path: '/editPosts/:id',
-    // name: 'EditPost',
-    component: EditPosts
-  }
+    component: EditPosts,
+  },
 ]
 
 const router = createRouter({

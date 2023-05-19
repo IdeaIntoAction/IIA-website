@@ -5,16 +5,19 @@
       <input type="password" v-model="password" placeholder="Password" />
       <button type="submit">Registration</button>
     </form>
+    <div v-if="error" class="errorMessage">{{ error }}</div>
   </div>
 </template>
 
 <script>
 import { createUser } from '../services/api'
+import { handleRequestError } from '../services/errorHandler';
 export default {
   data() {
     return {
       email: '',
       password: '',
+      error: ''
     }
   },
   methods: {
@@ -22,13 +25,12 @@ export default {
       const { email, password } = this
       createUser(email, password)
         .then((response) => {
-          console.log(response.data.token)
           this.$router.push('/createPosts')
           return localStorage.setItem('sessionToken', response.data.token)
         })
         .catch((error) => {
-          console.error(error)
-        })
+        handleRequestError.call(this, error);
+      })
     },
   },
 }

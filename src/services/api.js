@@ -23,12 +23,12 @@ export const postsList = () => {
 export const getPostId = (postId) => {
   return axios.get(`http://localhost:8080/api/post/?id=${postId}`)
 }
-export const updatePost = ( updatePost) => {
-  const sessionToken = localStorage.getItem('sessionToken');
+export const updatePost = (updatePost) => {
+  const sessionToken = localStorage.getItem('sessionToken')
   return axios.put(`http://localhost:8080/api/post/update`, updatePost, {
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${sessionToken}`
-    }
-  });
-};
+      Authorization: `Bearer ${sessionToken}`,
+    },
+  })
+}

@@ -11,6 +11,7 @@
 
 <script>
 import { createPost } from '../services/api'
+import { handleRequestError } from '../services/errorHandler';
 export default {
   data() {
     return {
@@ -27,8 +28,8 @@ export default {
           console.log(response)
         })
         .catch((error) => {
-          console.error(error)
-        })
+        handleRequestError.call(this, error);
+      })
     },
   },
 }
