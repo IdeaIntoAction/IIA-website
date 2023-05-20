@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>empty</h1>
     <form @submit.prevent="newPost">
       <input type="title" placeholder="title" v-model="title" />

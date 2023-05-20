@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div class="container">
     <ul>
       <li v-for="post in posts" :key="post.id">
-        {{ post.title }} - {{ post.content }}
-        <button @click="goEditPost(post.id)">edit post</button>
+        <h2>title: {{ post.title }}</h2>
+        <div class="content">content: {{ post.content }}</div>
+        <div class="btn topEdit-btn">
+          <button @click="goEditPost(post.id)">edit post</button>
+        </div>
       </li>
     </ul>
     <div v-if="error" class="errorMessage">{{ error }}</div>
@@ -41,4 +44,14 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+li {
+  position: relative;
+  .topEdit-btn{
+    position: absolute;
+    top:0;
+    right: 0;
+  }
+}
+
+</style>

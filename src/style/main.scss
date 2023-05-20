@@ -11,18 +11,19 @@ html {
 }
 
 button {
-  display: inline-block;
+  display: block;
   padding: 10px 20px;
   background-color: var(--primary-color);
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s;
+  margin: 0 auto;
+  button:hover {
+    background-color: var(--secondary-color);
+  }
 }
 
-button:hover {
-  background-color: var(--secondary-color);
-}
 .errorMessage {
   padding: 0.5rem;
   background: var(--error-color);
@@ -30,4 +31,24 @@ button:hover {
   position: absolute;
   bottom: 3rem;
   left: 3rem;
+}
+.container {
+  width: 40rem;
+  display: block;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input {
+  padding: 0.5rem;
+  width: 15rem;
+  height: 2rem;
+  margin: 1rem auto;
+  display: block;
+
 }

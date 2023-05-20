@@ -1,17 +1,16 @@
 <template>
   <div class="container">
-    <div class="post">post {{ postId }}</div>
     <form @submit.prevent="editPost(title, content)">
       <input type="text" v-model="title" placeholder="Title" />
       <input type="text" v-model="content" placeholder="Content" />
-      <div class="post">{{ title }}</div>
-      <button type="submit">click</button>
+      <button type="submit">Edit Post # {{ postId }}</button>
+      <button @click="deletePost(this.updatePostData.id)">delate</button>
     </form>
     <div v-if="error" class="errorMessage">{{ error }}</div>
   </div>
 </template>
 <script>
-import { getPostId, updatePost } from '../services/api'
+import { getPostId, updatePost  } from '../services/api'
 import { handleRequestError } from '../services/errorHandler';
 export default {
   data() {
@@ -36,11 +35,11 @@ export default {
         .catch((error) => {
         handleRequestError.call(this, error);
       })
+      this.$router.push('/postsList')
     },
   },
   mounted() {
     getPostId(this.postId).then((response) => {
-      console.log(response)
       this.title = response.data.title
       this.content = response.data.content
     })

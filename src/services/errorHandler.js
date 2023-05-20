@@ -1,6 +1,12 @@
 export function handleRequestError(error) {
-    setInterval(() => {
-      this.error = '';
-    }, 5000);
-    this.error = error.message;
+  this.error = error.message;
+  setTimeout(()=> {
+    this.error = ''
+  },5000)
 }
+
+
+import { debounce } from 'lodash';
+
+
+export const debouncedHandleRequestError = debounce(handleRequestError, 5000);
