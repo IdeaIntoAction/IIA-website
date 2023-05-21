@@ -10,7 +10,10 @@
                     content: {{ post.content }}
                 </div>
                 <div class="btn topEdit-btn">
-                    <button @click="goEditPost(post.id)">
+                    <button
+                        type="button"
+                        @click="goEditPost(post.id)"
+                    >
                         edit post
                     </button>
                 </div>
@@ -49,9 +52,7 @@ export default {
     goEditPost(postId) {
       try {
         this.$router.push({ path: `/editPosts/${postId}` });
-      } catch (error) {
-        console.error(error);
-      }
+      } catch (error) { /* empty */ }
     }
   }
 };

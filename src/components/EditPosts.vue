@@ -1,11 +1,13 @@
 <template>
     <div class="container">
         <form @submit.prevent="editPost(title, content)">
+            <label for="title">title</label>
             <input
                 type="text"
                 v-model="title"
                 placeholder="Title"
             >
+            <label for="content">Content</label>
             <input
                 type="text"
                 v-model="content"
@@ -13,9 +15,6 @@
             >
             <button type="submit">
                 Edit Post # {{ postId }}
-            </button>
-            <button @click="deletePost(this.updatePostData.id)">
-                delate
             </button>
         </form>
         <div
@@ -56,9 +55,6 @@ export default {
         content: this.content
       };
       updatePost(updatePostData)
-        .then(response => {
-          console.log(response);
-        })
         .catch(error => {
           handleRequestError.call(this, error);
         });
