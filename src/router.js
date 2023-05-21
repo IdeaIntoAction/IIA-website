@@ -1,32 +1,32 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
-import TheRegistration from './components/TheRegistration.vue'
-import CreatePosts from './components/CreatePosts.vue'
-import PostsList from './components/PostsList.vue'
-import EditPosts from './components/EditPosts.vue'
+import TheRegistration from './components/TheRegistration.vue';
+import CreatePosts from './components/CreatePosts.vue';
+import PostsList from './components/PostsList.vue';
+import EditPosts from './components/EditPosts.vue';
 
 const routes = [
   {
     path: '/',
-    component: TheRegistration,
+    component: TheRegistration
   },
   {
     path: '/createPosts',
-    component: CreatePosts,
+    component: CreatePosts
   },
   {
     path: '/postsList',
-    component: PostsList,
+    component: PostsList
   },
   {
     path: '/editPosts/:id',
-    component: EditPosts,
-  },
-]
+    component: EditPosts
+  }
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-})
+  routes
+});
 
-export default router
+export default router;
