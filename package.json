@@ -19,6 +19,7 @@
     "vuetify": "^3.2.5"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.194",
     "@typescript-eslint/parser": "^5.59.6",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/cli-plugin-eslint": "~5.0.0",

@@ -2,10 +2,12 @@
     <div class="container">
         <form @submit.prevent="register">
             <input
+                id="email"
                 type="email"
                 v-model="email"
                 placeholder="Email"
             >
+            <label for="password">Password</label>
             <input
                 type="password"
                 v-model="password"

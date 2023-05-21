@@ -21,9 +21,9 @@ export const postsList = () => axios.get(`${baseURL}/post/all?limit=10&offset=0`
 
 export const getPostId = postId => axios.get(`${baseURL}/post/?id=${postId}`);
 
-export const updatePost = updatePost => {
+export const updatePost = post => {
   const sessionToken = localStorage.getItem('sessionToken');
-  return axios.put(`${baseURL}/post/update`, updatePost, {
+  return axios.put(`${baseURL}/post/update`, post, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${sessionToken}`
