@@ -2,11 +2,13 @@
     <div class="container">
         <h1>empty</h1>
         <form @submit.prevent="newPost">
+            <label for="password">Password</label>
             <input
                 type="title"
                 placeholder="title"
                 v-model="title"
             >
+            <label for="content">Password</label>
             <input
                 type="content"
                 placeholder="content"
@@ -42,13 +44,11 @@ export default {
     newPost() {
       const { title, content } = this;
       createPost(title, content)
-        .then(response => {
-          console.log(response);
-        })
         .catch(error => {
           handleRequestError.call(this, error);
         });
     }
+
   }
 };
 </script>
