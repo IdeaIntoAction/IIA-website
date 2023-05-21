@@ -27,7 +27,7 @@
 
 <script>
 import { createUser } from '../services/api';
-import { debouncedHandleRequestError } from '../services/errorHandler';
+import { handleRequestError } from '../services/errorHandler';
 
 export default {
   data() {
@@ -47,7 +47,7 @@ export default {
           return localStorage.setItem('sessionToken', response.data.token);
         })
         .catch(error => {
-          debouncedHandleRequestError.call(this, error);
+          handleRequestError.call(this, error);
         });
     }
   }
@@ -55,5 +55,4 @@ export default {
 </script>
 
 <style>
-
 </style>

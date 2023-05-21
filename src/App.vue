@@ -10,6 +10,6 @@ export default {
 };
 </script>
 
-<style>
-@import url('./style/main.scss');
+<style lang="scss">
+@import './style/main.scss';
 </style>
