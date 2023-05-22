@@ -4,10 +4,15 @@ import TheRegistration from './components/TheRegistration.vue';
 import CreatePosts from './components/CreatePosts.vue';
 import PostsList from './components/PostsList.vue';
 import EditPosts from './components/EditPosts.vue';
+import TheHome from './pages/TheHome.vue';
 
 const routes = [
   {
     path: '/',
+    component: TheHome
+  },
+  {
+    path: '/registration',
     component: TheRegistration
   },
   {

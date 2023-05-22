@@ -1,6 +1,7 @@
 @import'./variables.scss';
 
 html {
+  background-color: var(--main-bg-color);
   width: 100%;
 }
 
@@ -42,13 +43,12 @@ ul {
   list-style: none;
 }
 a {
+  color: var(--text-white-color);
   text-decoration: none;
 }
 input {
   padding: 0.5rem;
   width: 15rem;
   height: 2rem;
-  margin: 1rem auto;
   display: block;
-
 }
