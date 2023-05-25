@@ -11,4 +11,3 @@ services:
 networks:
   IIA-network:
     name: IIA-network
-    external: true
