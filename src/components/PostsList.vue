@@ -1,31 +1,31 @@
 <template>
-    <div class="container">
-        <ul>
-            <li
-                v-for="post in posts"
-                :key="post.id"
-            >
-                <h2>title: {{ post.title }}</h2>
-                <div class="content">
-                    content: {{ post.content }}
-                </div>
-                <div class="btn topEdit-btn">
-                    <button
-                        type="button"
-                        @click="goEditPost(post.id)"
-                    >
-                        edit post
-                    </button>
-                </div>
-            </li>
-        </ul>
-        <div
-            v-if="error"
-            class="errorMessage"
-        >
-            {{ error }}
+  <div class="container">
+    <ul>
+      <li
+        v-for="post in posts"
+        :key="post.id"
+      >
+        <h2>title: {{ post.title }}</h2>
+        <div class="content">
+          content: {{ post.content }}
         </div>
+        <div class="btn topEdit-btn">
+          <button
+            type="button"
+            @click="goEditPost(post.id)"
+          >
+            edit post
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div
+      v-if="error"
+      class="errorMessage"
+    >
+      {{ error }}
     </div>
+  </div>
 </template>
 
 <script>

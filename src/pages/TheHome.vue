@@ -1,19 +1,19 @@
 <template>
-    <div class="homeContainer">
-        <div class="content">
-            <div class="title">
-                Learn development with
-                great articles.
-            </div>
-            <div class="subtitle">
-                Find the latest of my writing here.
-            </div>
-            <searchInput class="homeBtn" />
-        </div>
-        <div class="main-img">
-            <!-- <img src="" alt=""> -->
-        </div>
+  <div class="homeContainer">
+    <div class="content">
+      <div class="title">
+        Learn development with
+        great articles.
+      </div>
+      <div class="subtitle">
+        Find the latest of my writing here.
+      </div>
+      <searchInput class="homeBtn" />
     </div>
+    <div class="main-img">
+      <!-- <img src="" alt=""> -->
+    </div>
+  </div>
 </template>
 <script>
 import searchInput from '../components/inputs/SearchInput.vue';

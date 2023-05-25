@@ -1,29 +1,29 @@
 <template>
-    <div class="container">
-        <form @submit.prevent="register">
-            <label for="email">Email</label>
-            <input
-                type="email"
-                v-model="email"
-                placeholder="Email"
-            >
-            <label for="password">Password</label>
-            <input
-                type="password"
-                v-model="password"
-                placeholder="Password"
-            >
-            <button type="submit">
-                Registration
-            </button>
-        </form>
-        <div
-            v-if="error"
-            class="errorMessage"
-        >
-            {{ error }}
-        </div>
+  <div class="container">
+    <form @submit.prevent="register">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        v-model="email"
+        placeholder="Email"
+      >
+      <label for="password">Password</label>
+      <input
+        type="password"
+        v-model="password"
+        placeholder="Password"
+      >
+      <button type="submit">
+        Registration
+      </button>
+    </form>
+    <div
+      v-if="error"
+      class="errorMessage"
+    >
+      {{ error }}
     </div>
+  </div>
 </template>
 
 <script>
