@@ -1,17 +1,17 @@
 {
-  "name": "ideaintoaction",
-  "version": "0.1.0",
+  "name": "IIA",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
-    "serve": "vite",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue src",
     "format": "eslint --fix --ext .js,.vue src",
     "js-format": "prettier --write \"src/**/*.{js,vue}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo \"No test specified\" && exit 0"
   },
-  "type": "module",
   "dependencies": {
     "axios": "^1.4.0",
     "lodash": "^4.17.21",
@@ -32,6 +32,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-vue": "^9.13.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "vite": "^4.3.2"
@@ -44,5 +45,10 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix --quiet"
+    ]
+  }
 }

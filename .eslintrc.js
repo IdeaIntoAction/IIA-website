@@ -24,7 +24,7 @@ module.exports = {
     }],
     'vue/html-indent': [
       'error',
-      4,
+      2,
       {
         attribute: 1,
         baseIndent: 1,

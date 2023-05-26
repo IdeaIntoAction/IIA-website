@@ -1,29 +1,29 @@
 <template>
-    <div class="container">
-        <form @submit.prevent="editPost(title, content)">
-            <label for="title">title</label>
-            <input
-                type="text"
-                v-model="title"
-                placeholder="Title"
-            >
-            <label for="content">Content</label>
-            <input
-                type="text"
-                v-model="content"
-                placeholder="Content"
-            >
-            <button type="submit">
-                Edit Post # {{ postId }}
-            </button>
-        </form>
-        <div
-            v-if="error"
-            class="errorMessage"
-        >
-            {{ error }}
-        </div>
+  <div class="container">
+    <form @submit.prevent="editPost(title, content)">
+      <label for="title">title</label>
+      <input
+        type="text"
+        v-model="title"
+        placeholder="Title"
+      >
+      <label for="content">Content</label>
+      <input
+        type="text"
+        v-model="content"
+        placeholder="Content"
+      >
+      <button type="submit">
+        Edit Post # {{ postId }}
+      </button>
+    </form>
+    <div
+      v-if="error"
+      class="errorMessage"
+    >
+      {{ error }}
     </div>
+  </div>
 </template>
 <script>
 import { getPostId, updatePost } from '../services/api';

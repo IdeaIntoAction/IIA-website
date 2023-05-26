@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    container_name: IIA_frontend_dev
+    networks:
+      - IIA-network
+
+networks:
+  IIA-network:
+    name: IIA-network
