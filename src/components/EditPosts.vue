@@ -54,10 +54,9 @@ export default {
         title: this.title,
         content: this.content
       };
-      updatePost(updatePostData)
-        .catch(error => {
-          handleRequestError.call(this, error);
-        });
+      updatePost(updatePostData).catch(error => {
+        handleRequestError.call(this, error);
+      });
       this.$router.push('/postsList');
     }
   }

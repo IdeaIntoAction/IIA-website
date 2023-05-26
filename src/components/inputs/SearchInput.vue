@@ -45,31 +45,48 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+
+<style scoped lang="scss">
+@import "../../style/abstraction/home.scss";
+@import "../../style/variables.scss";
 .inputContainer {
+    width: 100%;
     position: relative;
-    label{
-     display: none;
+    padding: 0 1rem;
+    margin: 0 auto;
+    @include for-desktop {
+        padding: 0;
     }
     .searchInput {
+        display: block;
+        margin: 0 auto;
         padding-left: 4rem;
         padding-right: 4rem;
-        font-size: 18px;
-        line-height: 21px;
-        color:  #4B4C53;;
-        background: #ffffff00;
-        width: 25rem;
+        font-size: 1rem;
+        color:  var(--all-text-white);;
+        background-color: var(--background-opacity);
+        width: 100%;
         height: 4.5rem;
-        border: 1px solid #4B4C53;
+        border: 0.01rem solid var(--border-color);
         border-radius: 5rem;
+    //     @include for-desktop {
+    //         width: 40rem;
+    //   }
     }
-    button{
-        left: 0.6rem;
+    .searchIconBtn{
+        left: 1.6rem;
         top: 0.9rem;
         position: absolute;
         border: none;
-        background: #ffffff00;
+        opacity: 100%;
+        background-color: var(--background-opacity);
         z-index: -1;
+        @include for-desktop {
+            left: 0.7rem;
+        }
+    }
+    label{
+        display: none;
     }
 }
 </style>

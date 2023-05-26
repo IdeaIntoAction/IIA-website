@@ -52,20 +52,21 @@ export default {
     goEditPost(postId) {
       try {
         this.$router.push({ path: `/editPosts/${postId}` });
-      } catch (error) { /* empty */ }
+      } catch (error) {
+        /* empty */
+      }
     }
   }
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 li {
   position: relative;
-  .topEdit-btn{
+  .topEdit-btn {
     position: absolute;
-    top:0;
+    top: 0;
     right: 0;
   }
 }
-
 </style>

@@ -1,10 +1,18 @@
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d; 
-    --text-color: #3a3838; 
-    --background-color: #f8f8f8; 
+    //message
     --error-color: #f81010;
-    --error-text-color: #e7e5e5;
-    --main-bg-color: #1F2028;
-    --text-white-color: #dfdede;
+    //text
+    --all-text-white: #e7e5e5;
+    --title-color: #dfdede;
+    --title-size: 3rem;
+    --title-font-weight-500: 500;
+    --subtitle-color: #a9adc1;
+    //background
+    --background-main-color:#1f2028;
+    --background-opacity: transparent;
+    //buttons-inputs
+    --border-color: #4b4c53;
+    //hover
+    --link-color: #706767;
 }
+ 
