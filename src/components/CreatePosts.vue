@@ -43,12 +43,10 @@ export default {
   methods: {
     newPost() {
       const { title, content } = this;
-      createPost(title, content)
-        .catch(error => {
-          handleRequestError.call(this, error);
-        });
+      createPost(title, content).catch(error => {
+        handleRequestError.call(this, error);
+      });
     }
-
   }
 };
 </script>

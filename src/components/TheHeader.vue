@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <!-- eslint-disable vuejs-accessibility/anchor-has-content -->
 <!-- eslint-disable max-len -->
 <template>
@@ -30,49 +31,120 @@
 </template>
 
 <script>
+// import burger from './TheBurger.vue';
+
 export default {
+  components: {
+    // burger
+  },
   data() {
     return {
-      userName: 'Trushik Semyon'
+      userName: 'Trushik Semyon',
+      switchToggle: false
     };
+  },
+
+  methods: {
+    openLinks(switchToggle) {
+      // eslint-disable-next-line no-unused-vars
+      this.switchToggle = !switchToggle;
+    }
   }
 };
 </script>
-<style lang="scss">
-@import '../style/variables.scss';
+<style scoped lang="scss">
+@import "../style/variables.scss";
+@import "../style/abstraction/home.scss";
 .header {
-    align-items: center;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    max-width: 1300px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem 1rem;
+  a {
+    font-size: 1.5rem;
+    text-align: center;
+    display: block;
+  }
+  @include for-desktop {
     margin: 0 auto;
-    padding: 2rem 0;
-    color: var(--text-white-color);
-    .name {
-        position: absolute;
-        left: 3rem;
-        font-size: 25px;
-    }
-    .links{
-        margin-left: 13rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        a {
-            font-size: 25px;
-            text-align: center;
-            display: block;
-            margin: 0 2rem;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #706767;
-        }
-    }
-    .logo {
-        position: absolute;
-        right: 3rem;
-    }
+    max-width: 80rem;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+  }
 }
+.logo, .links {
+  display: none;
+}
+.logo {
+  @include for-desktop {
+    display: block;
+  }
+}
+.links {
+  position: relative;
+  background:var(--background-main-color);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  @include for-desktop {
+    position: relative;
+    justify-content: space-between;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.links a {
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 0.1rem solid;
+  @include for-desktop {
+    font-size: 1.5rem;
+    display: block;
+    border-bottom: 0;
+    margin: 0 0.5rem;
+  }
+}
+.links a:hover {
+      text-decoration: underline;
+      color: var(--link-color);
+    }
+.show {
+  display: flex;
+}
+.close {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-self: center;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  @include for-desktop {
+    display: none;
+  }
+}
+.close  span{
+  border: 0.1rem solid #fff;
+  width: 100%;
+}
+.close span:first-child {
+  transform: translateY(100%)  rotate(45deg);
+}
+.close span:last-child {
+  transform:  translateY(50%) rotate(-45deg);
+}
+  .name, .links {
+    font-size: 2rem;
+    align-self: center;
+  }
 </style>
