@@ -1,4 +1,3 @@
-<!-- eslint-disable max-len -->
 <template>
   <form class="inputContainer">
     <label for="search">Search</label>
@@ -47,8 +46,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../style/abstraction/home.scss";
-@import "../../style/variables.scss";
+@import "../../style/abstracts/variables";
+@import "../../style/abstracts/mixins";
 .inputContainer {
     width: 100%;
     position: relative;
@@ -69,9 +68,6 @@ export default {
         height: 4.5rem;
         border: 0.01rem solid var(--border-color);
         border-radius: 5rem;
-    //     @include for-desktop {
-    //         width: 40rem;
-    //   }
     }
     .searchIconBtn{
         left: 1.6rem;

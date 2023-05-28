@@ -17,11 +17,6 @@
       <searchInput class="homeBtn" />
     </div>
   </div>
-  <!-- <div>
-    <div class="main-img">
-      {{ }}
-    </div>
-  </div> -->
 </template>
 <script>
 import searchInput from '../components/inputs/SearchInput.vue';
@@ -34,8 +29,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "../style/variables.scss";
-@import "../style/abstraction/home.scss";
+@import "../style/abstracts/mixins";
+@import '../style/abstracts/variables';
 .mainContainer {
   display: flex;
   flex-direction: column;

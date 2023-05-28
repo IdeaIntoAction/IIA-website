@@ -8,3 +8,7 @@
 @import 'base/typography';
 @import 'base/classes';
 @import 'base/dialogs';
+
+html {
+  background: var(--background-main-color);
+}

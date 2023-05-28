@@ -27,7 +27,7 @@
 </template>
 <script>
 import { getPostId, updatePost } from '../services/api';
-import { handleRequestError } from '../services/errorHandler';
+import { catchError } from '../services/errorHandler';
 
 export default {
   data() {
@@ -55,7 +55,7 @@ export default {
         content: this.content
       };
       updatePost(updatePostData).catch(error => {
-        handleRequestError.call(this, error);
+        catchError.call(this, error);
       });
       this.$router.push('/postsList');
     }

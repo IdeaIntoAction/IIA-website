@@ -29,7 +29,7 @@
 
 <script>
 import { createPost } from '../services/api';
-import { handleRequestError } from '../services/errorHandler';
+import { catchError } from '../services/errorHandler';
 
 export default {
   data() {
@@ -44,7 +44,7 @@ export default {
     newPost() {
       const { title, content } = this;
       createPost(title, content).catch(error => {
-        handleRequestError.call(this, error);
+        catchError.call(this, error);
       });
     }
   }
