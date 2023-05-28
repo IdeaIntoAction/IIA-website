@@ -1,4 +1,4 @@
-FROM node:18.13.0-alpine3.16 as base
+FROM node:18.14.0-alpine3.16 as base
 ENV APP_DIR=/app
 WORKDIR ${APP_DIR}
 COPY --chown=node:node package.json yarn.lock ./
