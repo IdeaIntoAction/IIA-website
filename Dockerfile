@@ -1,15 +1,15 @@
-FROM node:18.14.0-alpine3.16 as base
-ENV APP_DIR=/app
-WORKDIR ${APP_DIR}
-COPY --chown=node:node package.json yarn.lock ./
+# Stage 1: Build the application
+FROM node:lts-alpine as dev
+WORKDIR /app
+COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
-
-FROM base as dev
-EXPOSE 3000
-CMD [ "yarn", "dev" ]
-
-FROM base as builder
-COPY src ./src
-COPY public ./public
-COPY .eslintrc.json .eslintignore ./
+COPY . .
 RUN yarn build
+
+# Stage 2: Create the production image
+FROM node:lts-alpine as production
+WORKDIR /app
+COPY --from=dev /app/dist ./dist
+RUN yarn install --production --frozen-lockfile
+EXPOSE 3000
+CMD ["yarn", "start"]

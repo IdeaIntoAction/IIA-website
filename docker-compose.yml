@@ -4,7 +4,7 @@ services:
     build:
       context: .
       target: dev
-    container_name: IIA_frontend_dev
+    container_name: IIA_website
     networks:
       - IIA-network
 
