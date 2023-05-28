@@ -1,6 +1,3 @@
-<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
-<!-- eslint-disable vuejs-accessibility/anchor-has-content -->
-<!-- eslint-disable max-len -->
 <template>
   <navbar class="header">
     <div class="name">
@@ -12,7 +9,10 @@
       <a href="#">About</a>
     </div>
     <div class="logo">
-      <a href="#">
+      <a
+        aria-label="img"
+        href="#"
+      >
         <svg
           width="36"
           height="44"
@@ -27,15 +27,16 @@
         </svg>
       </a>
     </div>
+    <burger />
   </navbar>
 </template>
 
 <script>
-// import burger from './TheBurger.vue';
+import burger from './TheBurger.vue';
 
 export default {
   components: {
-    // burger
+    burger
   },
   data() {
     return {
@@ -46,24 +47,25 @@ export default {
 
   methods: {
     openLinks(switchToggle) {
-      // eslint-disable-next-line no-unused-vars
       this.switchToggle = !switchToggle;
     }
   }
 };
 </script>
 <style scoped lang="scss">
-@import "../style/variables.scss";
-@import "../style/abstraction/home.scss";
+@import "../style/abstracts/mixins";
+@import "../style/abstracts/variables";
 .header {
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 1rem 1rem;
+  justify-content: space-between;
+  padding: 2rem 3rem;
   a {
-    font-size: 1.5rem;
+    color: var(--all-text-white);
+    text-decoration: none;
+    font-size:3rem;
     text-align: center;
     display: block;
   }

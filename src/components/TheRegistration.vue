@@ -28,7 +28,7 @@
 
 <script>
 import { createUser } from '../services/api';
-import { handleRequestError } from '../services/errorHandler';
+import { catchError } from '../services/errorHandler';
 
 export default {
   data() {
@@ -48,7 +48,7 @@ export default {
           return localStorage.setItem('sessionToken', response.data.token);
         })
         .catch(error => {
-          handleRequestError.call(this, error);
+          catchError.call(this, error);
         });
     }
   }

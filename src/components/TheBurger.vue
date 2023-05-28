@@ -4,9 +4,9 @@
     @click=" $emit('toggleSwitch')"
     @keydown="bar"
   >
-    <span>{{}}</span>
-    <span>{{}}</span>
-    <span>{{}}</span>
+    <span />
+    <span />
+    <span />
   </div>
 </template>
 
@@ -19,7 +19,6 @@ export default {
   },
   methods: {
     toggleSwitch() {
-      // eslint-disable-next-line no-console
       this.switchToggle = !this.switchToggle;
     }
   }
@@ -27,14 +26,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/abstraction/home.scss";
+@import "../style/abstracts/mixins";
 .burger {
     align-self: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
+    width: 4rem;
+    height: 4rem;
     @include for-desktop{
       display: none;
     }
@@ -42,6 +41,6 @@ export default {
 
 .burger span {
     width: 100%;
-    border:  1px solid #fff;
+    border:  0.01rem solid #fff;
 }
 </style>

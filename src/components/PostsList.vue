@@ -30,7 +30,7 @@
 
 <script>
 import { postsList } from '../services/api';
-import { handleRequestError } from '../services/errorHandler';
+import { catchError } from '../services/errorHandler';
 
 export default {
   data() {
@@ -45,7 +45,7 @@ export default {
         this.posts = response.data.posts;
       })
       .catch(error => {
-        handleRequestError.call(this, error);
+        catchError.call(this, error);
       });
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
       try {
         this.$router.push({ path: `/editPosts/${postId}` });
       } catch (error) {
-        /* empty */
+        catchError.call(this, error);
       }
     }
   }
