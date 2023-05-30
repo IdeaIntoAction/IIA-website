@@ -135,6 +135,7 @@ module.exports = {
     ],
     'no-bitwise': ['error', { allow: ['~'] }],
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'max-len': ['error', { code: 120 }],
     'object-curly-newline': ['error', {
       ObjectExpression: { multiline: true, consistent: true },
       ObjectPattern: { multiline: true, consistent: true }
