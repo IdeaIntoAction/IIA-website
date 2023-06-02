@@ -38,7 +38,6 @@ export default {
     padding: 0 1rem;
     flex-direction: row-reverse;
     justify-content: space-between;
-    max-width: 70rem;
     margin: 0 auto;
   }
   .main-img{
@@ -54,9 +53,6 @@ export default {
       max-width: 50%;
     }
     .title {
-      width: 80%;
-      font-size: 3rem;
-      line-height: 3rem;
       color: var(--title-color);
       display: block;
       margin: 0 auto;
@@ -65,12 +61,9 @@ export default {
       }
     }
     .subtitle {
+      color: var(--subtitle-color);
       display: block;
       margin: 1rem auto 0;
-      width: 80%;
-      font-size: 2.5rem;
-      line-height: 3rem;
-      color: var(--subtitle-color);
        @include for-desktop {
         width: 100%;
       }

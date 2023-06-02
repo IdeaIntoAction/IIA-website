@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="mainContainer">
     <form @submit.prevent="register">
       <label for="email">Email</label>
       <input
@@ -55,4 +55,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.mainContainer{
+ display: block;
+ margin: 0 auto;
+ width: 40rem;
+}
+</style>
