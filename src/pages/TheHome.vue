@@ -1,17 +1,20 @@
 <template>
-  <div class="homeContainer">
+  <div class="mainContainer">
+    <div class="main-img">
+      <img
+        class="crazyMonster"
+        src="../assets/icons/crazy-monster.svg"
+        alt="monster"
+      >
+    </div>
     <div class="content">
       <div class="title">
-        Learn development with
-        great articles.
+        Learn development with great articles.
       </div>
       <div class="subtitle">
         Find the latest of my writing here.
       </div>
       <searchInput class="homeBtn" />
-    </div>
-    <div class="main-img">
-      <!-- <img src="" alt=""> -->
     </div>
   </div>
 </template>
@@ -22,39 +25,53 @@ export default {
   components: {
     searchInput
   },
-  data() {
-
-  }
+  data() {}
 };
 </script>
-<style lang="scss">
-.homeContainer{
+<style scoped lang="scss">
+@import "../style/abstracts/mixins";
+@import '../style/abstracts/variables';
+.mainContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  .main-img {
-    width: 25rem;
+  flex-direction: column;
+  @include for-desktop {
+    padding: 0 1rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .main-img{
+    .crazyMonster {
+      display: block;
+      margin: 0 auto;
+      width: 70%;
+    }
   }
   .content {
+    @include for-desktop {
+      margin-top: 6rem;
+      max-width: 50%;
+    }
     .title {
-      margin-top: 10rem;
-      width: 25rem;
-      font-size: 40px;
-      line-height: 47px;
-      color: #FFFFFF;
+      color: var(--title-color);
+      display: block;
+      margin: 0 auto;
+      @include for-desktop {
+        width: 100%;
+      }
     }
     .subtitle {
-      margin-top: 1.5rem;
-      width: 30rem;
-      font-size: 40px;
-      line-height: 47px;
-      color: #A9ADC1;
+      color: var(--subtitle-color);
+      display: block;
+      margin: 1rem auto 0;
+       @include for-desktop {
+        width: 100%;
+      }
     }
-    .homeBtn{
+    .homeBtn {
       margin-top: 2.5rem;
     }
   }
 }
+
 </style>

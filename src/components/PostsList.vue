@@ -30,7 +30,7 @@
 
 <script>
 import { postsList } from '../services/api';
-import { handleRequestError } from '../services/errorHandler';
+import { catchError } from '../services/errorHandler';
 
 export default {
   data() {
@@ -45,27 +45,28 @@ export default {
         this.posts = response.data.posts;
       })
       .catch(error => {
-        handleRequestError.call(this, error);
+        catchError.call(this, error);
       });
   },
   methods: {
     goEditPost(postId) {
       try {
         this.$router.push({ path: `/editPosts/${postId}` });
-      } catch (error) { /* empty */ }
+      } catch (error) {
+        catchError.call(this, error);
+      }
     }
   }
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 li {
   position: relative;
-  .topEdit-btn{
+  .topEdit-btn {
     position: absolute;
-    top:0;
+    top: 0;
     right: 0;
   }
 }
-
 </style>

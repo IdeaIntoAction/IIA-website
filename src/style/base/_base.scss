@@ -12,8 +12,14 @@ body {
     overflow: hidden;
     pointer-events: none;
     user-select: none;
-  }
+  } 
+}
+html {
+  background: var(--background-main-color);
 }
 
+.mainContainer {
+  max-width: 70rem;
+}
             
             

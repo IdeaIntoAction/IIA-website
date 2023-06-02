@@ -1,4 +1,4 @@
-export function handleRequestError(error) {
+export function catchError(error) {
   this.error = error.message;
   setTimeout(() => {
     this.error = '';

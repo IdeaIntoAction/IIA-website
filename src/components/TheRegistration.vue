@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="mainContainer">
     <form @submit.prevent="register">
       <label for="email">Email</label>
       <input
@@ -28,7 +28,7 @@
 
 <script>
 import { createUser } from '../services/api';
-import { handleRequestError } from '../services/errorHandler';
+import { catchError } from '../services/errorHandler';
 
 export default {
   data() {
@@ -48,12 +48,17 @@ export default {
           return localStorage.setItem('sessionToken', response.data.token);
         })
         .catch(error => {
-          handleRequestError.call(this, error);
+          catchError.call(this, error);
         });
     }
   }
 };
 </script>
 
-<style>
+<style scoped lang="scss">
+.mainContainer{
+ display: block;
+ margin: 0 auto;
+ width: 40rem;
+}
 </style>
