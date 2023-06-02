@@ -3,7 +3,7 @@
     <div class="main-img">
       <img
         class="crazyMonster"
-        src="../assets/icons/Crazy-monster.svg"
+        src="../assets/icons/crazy-monster.svg"
         alt="#"
       >
     </div>
