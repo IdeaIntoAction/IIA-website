@@ -4,7 +4,7 @@
       <img
         class="crazyMonster"
         src="../assets/icons/crazy-monster.svg"
-        alt="#"
+        alt="monster"
       >
     </div>
     <div class="content">

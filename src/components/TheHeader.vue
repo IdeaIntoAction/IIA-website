@@ -1,5 +1,3 @@
-<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
-<!-- eslint-disable vue/html-button-has-type -->
 <template>
   <navbar class="header">
     <div class="name">
@@ -7,9 +5,10 @@
     </div>
     <div
       class="links"
-      :class="{ show: show }"
+      :class="{ show: showMenuList }"
     >
       <button
+        type="button"
         class="close"
         @click="showLinks"
       >
@@ -31,10 +30,12 @@
       </a>
     </div>
     <div
+      @keydown="escape"
       @click="showLinks"
       class="burger"
     >
       <img
+        class="logoMonster"
         src="../assets/icons/burger-icon.svg"
         alt="burger"
       >
@@ -47,13 +48,13 @@ export default {
   data() {
     return {
       userName: 'Trushik Semyon',
-      show: false
+      showMenuList: false
     };
   },
 
   methods: {
     showLinks() {
-      this.show = !this.show;
+      this.showMenuList = !this.showMenuList;
     }
   }
 };
@@ -90,7 +91,7 @@ export default {
   @include for-desktop {
     display: none;
   }
-  img {
+  .logoMonster{
     width: 3rem;
     height: 3rem;
   }
@@ -153,43 +154,6 @@ export default {
 .show {
   display: flex;
 }
-// .links {
-//   position: relative;
-//   background:var(--background-main-color);
-//   position: absolute;
-//   width: 100vh;
-//   top: 0;
-//   height: 100%;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   @include for-desktop {
-//     position: relative;
-//     justify-content: space-between;
-//     width: 33%;
-//     height: 100%;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//   }
-// }
-// .links a {
-//   margin: 0 auto;
-//   width: 90%;
-//   border-bottom: 0.1rem solid;
-//   @include for-desktop {
-//     font-size: 1.5rem;
-//     display: block;
-//     border-bottom: 0;
-//     margin: 0;
-//   }
-// }
-// .links a:hover {
-//   text-decoration: underline;
-//   color: var(--link-color);
-// }
-// .links.show {
-//   display: flex;
-// }
 .name, .links, .logo {
   font-size: 2rem;
   align-self: center;
