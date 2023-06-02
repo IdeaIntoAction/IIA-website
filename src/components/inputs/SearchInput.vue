@@ -6,7 +6,7 @@
       type="button"
     >
       <img
-        src="../assets/icons/search.svg"
+        src="../../assets/icons/search.svg"
         alt="search"
       >
     </button>
