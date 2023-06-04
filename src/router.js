@@ -5,11 +5,16 @@ import CreatePosts from './components/CreatePosts.vue';
 import PostsList from './components/PostsList.vue';
 import EditPosts from './components/EditPosts.vue';
 import TheHome from './pages/TheHome.vue';
+import AdminPage from './pages/AdminLogin.vue';
 
 const routes = [
   {
     path: '/',
     component: TheHome
+  },
+  {
+    path: '/Admin',
+    component: AdminPage
   },
   {
     path: '/registration',
