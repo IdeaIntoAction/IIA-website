@@ -1,21 +1,38 @@
 <template>
-  <div class="container">
-    <h1>empty</h1>
+  <div class="mainContainer">
+    <div class="header">
+      <div class="back-arrow">
+        <img
+          class="back-arrow"
+          src=""
+          alt="back-arrow"
+        >
+      </div>
+      <div class="add-post-title">
+        Add post
+      </div>
+    </div>
     <form @submit.prevent="newPost">
-      <label for="password">Password</label>
+      <label for="password">title</label>
       <input
-        type="title"
-        placeholder="title"
+        class="create-title-input"
+        type="text"
+        placeholder="Title"
         v-model="title"
       >
       <label for="content">Password</label>
-      <input
-        type="content"
-        placeholder="content"
+      <textarea
+        class="content-input"
+        type="textarea"
+        placeholder="Content"
         v-model="content"
+      />
+      <addfile />
+      <button
+        class="btn"
+        type="submit"
       >
-      <button type="submit">
-        New Post
+        Post
       </button>
     </form>
     <div
@@ -28,10 +45,14 @@
 </template>
 
 <script>
+import addfile from './inputs/AddFileInput.vue';
 import { createPost } from '../services/api';
 import { catchError } from '../services/errorHandler';
 
 export default {
+  components: {
+    addfile
+  },
   data() {
     return {
       title: '',
@@ -51,4 +72,40 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+@import '../style/abstracts/variables';
+.mainContainer {
+  color: var(--all-text-white);
+  flex-direction: column;
+  padding: 1.5rem;
+  .header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .back-arrow {
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: inline;
+    top: 0;
+    left: 0;
+  }
+  .add-post-title {
+    font-size: 2.5rem;
+    display: inline-block;
+  }
+}
+.create-title-input, .content-input {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 0.7rem;
+}
+.btn {
+  margin-top: 5rem;
+  width: 100%;
+  border-radius: 0.7rem;
+}
+
+</style>
+//border-radius,fz variables todo

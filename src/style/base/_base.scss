@@ -22,10 +22,10 @@ label {
 }
 .mainContainer {
   margin: 0 auto;
-  display: block;
+  display: flex;
   max-width: 130rem;
 }
-button[type="submit"] {
+button[type="submit"],[type="button"] {
   display: block;
   background: var(--background-opacity);
   border: 0.01rem solid var(--border-color);
@@ -49,7 +49,7 @@ button:disabled {
     text-decoration: none;
   }
 }
-input[type="email"],[type="password"] {
+input[type="email"],[type="password"],[type="text"],[type="file"] {
   font-size: 2rem;
   min-width: 25rem;
   display: block;
@@ -59,6 +59,21 @@ input[type="email"],[type="password"] {
   border-radius: 2rem;
   color: var(--all-text-white);
   margin: 0.5rem auto;
+}
+textarea {
+  font-size: 2rem;
+  max-width: 100%;
+  min-height: 10rem;
+  display: block;
+  background: var(--background-opacity);
+  border: 0.1rem solid var(--border-color);
+  padding: 1rem 2rem;
+  border-radius: 0.7rem;
+  color: var(--all-text-white);
+  margin: 0.5rem auto;
+}
+textarea::placeholder {
+  color: var(--all-text-white);
 }
 input::placeholder {
   color: var(--all-text-white);
