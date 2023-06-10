@@ -76,7 +76,6 @@ export default {
     color: var(--all-text-white);
     text-decoration: none;
     font-size:3rem;
-    text-align: center;
     display: block;
   }
   @include for-desktop {
