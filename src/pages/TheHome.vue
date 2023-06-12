@@ -37,7 +37,7 @@ export default {
   @include for-desktop {
     padding: 0 1rem;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto;
   }
   .main-img{

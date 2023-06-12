@@ -1,3 +1,4 @@
+//img arrow todo
 <template>
   <div class="mainContainer">
     <div class="header">
@@ -27,7 +28,7 @@
         placeholder="Content"
         v-model="content"
       />
-      <addfile />
+      <addfile @imageUploaded="handleImageUploaded" />
       <button
         class="btn"
         type="submit"
@@ -57,16 +58,20 @@ export default {
     return {
       title: '',
       content: '',
-      error: ''
+      error: '',
+      coverImage: ''
     };
   },
 
   methods: {
     newPost() {
-      const { title, content } = this;
-      createPost(title, content).catch(error => {
+      const { title, content, coverImage } = this;
+      createPost(title, content, coverImage).catch(error => {
         catchError.call(this, error);
       });
+    },
+    handleImageUploaded(imageUrl) {
+      this.coverImage = imageUrl;
     }
   }
 };

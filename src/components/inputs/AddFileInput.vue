@@ -9,6 +9,7 @@
        alt="add-file-icon"
      >
       <input
+        @change="addFile"
         id="add-file"
         class="get-file-input"
         type="file"
@@ -19,13 +20,32 @@
         src="../../assets/icons/plus-small.svg"
         alt="plus"
       >
-
     </label>
   </div>
 </template>
 <script>
-export default {
+import axios from 'axios';
 
+export default {
+  data() {
+    return {
+      file: null
+    };
+  },
+  methods: {
+    async addFile(event) {
+      const formData = new FormData();
+      formData.append('image', event.target.files[0]);
+
+      try {
+        const response = await axios.post('http://localhost:8080/api/uploader/', formData);
+        const imageUrl = response.data.link;
+        this.$emit('imageUploaded', imageUrl);
+      } catch (error) {
+        // console.error(error);
+      }
+    }
+  }
 };
 </script>
 <style lang="scss">

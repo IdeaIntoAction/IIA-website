@@ -13,7 +13,9 @@
         v-model="password"
         placeholder="Password"
       >
-      <button type="submit">
+      <button
+        type="submit"
+      >
         Registration
       </button>
     </form>
