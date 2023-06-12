@@ -3,18 +3,24 @@
     <form @submit.prevent="register">
       <label for="email">Email</label>
       <input
+        @input="validateForm"
+        class="inputs"
         type="email"
         v-model="email"
         placeholder="Email"
       >
       <label for="password">Password</label>
       <input
+        @input="validateForm"
+        class="inputs"
         type="password"
         v-model="password"
         placeholder="Password"
       >
       <button
+        class="formBtn"
         type="submit"
+        :disabled="!validForm"
       >
         Registration
       </button>
@@ -37,11 +43,18 @@ export default {
     return {
       email: '',
       password: '',
-      error: ''
+      error: '',
+      validForm: false
     };
   },
 
   methods: {
+    validateForm() {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValidEmail = emailRegex.test(this.email);
+      const isValidPassword = this.password.length > 8;
+      this.validForm = isValidEmail && isValidPassword;
+    },
     register() {
       const { email, password } = this;
       createUser(email, password)
@@ -58,9 +71,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.mainContainer{
- display: block;
- margin: 0 auto;
- width: 40rem;
+@import '../style/abstracts/mixins';
+.mainContainer {
+  margin-top: 5rem;
+}
+.inputs, .formBtn {
+  @include for-desktop {
+    height: 5rem;
+    width: 50rem;
+  }
 }
 </style>
