@@ -1,9 +1,8 @@
 <script setup>
-import StatisticCorePage from './pages/StatisticCorePage.vue'
 </script>
 
 <template>
-  <StatisticCorePage/>
+  <router-view></router-view>
 </template>
 
 <style scoped lang="scss">
