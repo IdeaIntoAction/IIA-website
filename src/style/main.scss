@@ -1,14 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-a {
-    text-decoration: none;
-    color: #000000;
-}
-.main_wrapper {
-    display: block;
-    margin: 0 auto;
-    text-align: center
-}
+@import './base/base.scss'; 
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
