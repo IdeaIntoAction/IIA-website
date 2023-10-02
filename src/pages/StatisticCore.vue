@@ -22,20 +22,47 @@ export default {
 
 <template>
   <div>
-    <h1 class="mb-2 mt-2 text-center font-extrabold">Parser List</h1>
-    <table class="table-fixed m-auto parser">
+    <table class="table-auto m-auto border-separate border-spacing-2 border border-slate-400">
+      <caption class="caption-top mb-2 mt-2 text-center font-extrabold">Parser List
+      </caption>
       <thead>
         <tr>
-          <th>Name Site</th>
-          <th>Time update</th>
-          <th>Status</th>
+          <th class="text-center w-40">Site</th>
+          <th class="text-center w-40">Load</th>
+          <th class="text-center w-40">Start</th>
+          <th class="text-center w-auto">Adm</th>
+          <th class="text-center w-10 h-10">Act</th>
+          <th class="text-center w-40">Error</th>
+          <th class="text-center w-40">comm</th>
+          <th class="text-center w-10">Late</th>
+          <th class="text-center w-10 h-10">Stop</th>
+          <th class="text-center w-10 h-10">Work</th>
+        </tr>
+        <tr>
+          <th class="text-center"><input class="h-12 px-1 border border-slate-700 font-normal" type="text"></th>
+          <th class="text-center"><input class="h-12 px-1 border border-slate-700 font-normal" type="text"></th>
+          <th class="text-center"><input class="h-12 px-1 border border-slate-700 font-normal" type="text"></th>
+          <th class="text-center w-auto"></th>
+          <th class="text-center w-10 h-10"><input type="checkbox"></th>
+          <th class="text-center"><input class="h-12 px-1 border border-slate-700 font-normal" type="text"></th>
+          <th class="text-center"><input class="h-12 px-1 border border-slate-700 font-normal" type="text"></th>
+          <th class="text-center w-10"></th>
+          <th class="text-center w-10 h-10"><input type="checkbox"></th>
+          <th class="text-center w-10 h-10"><input type="checkbox"></th>
         </tr>
       </thead>
       <tbody v-for="parser in parsers" :key="parser.id" class="mt-4">
-        <tr class="bg-violet-100 hover:bg-violet-200 focus:outline-none focus:ring focus:ring-violet-300 cursor-pointer">
-          <td class="border border-slate-300 truncate w-1/2 py-2 px-2">{{ parser.site }}</td>
-          <td class="border border-slate-300 truncate w-1/4 py-2 px-2">Time Update</td>
-          <td class="border border-slate-300 truncate w-1/4 py-2 px-2">Status</td>
+        <tr class="text-center h-10">
+          <td class="truncate border border-slate-300 px-2"><a href={{parser.site.link}}>{{ parser.site }}</a></td>
+          <td class="truncate border border-slate-300 px-2">Load</td>
+          <td class="truncate border border-slate-300 px-2">Start</td>
+          <td class="truncate border border-slate-300 px-2"><router-link class="text-blue-600" to="/parserInfo">Link</router-link></td>
+          <td class="truncate border border-slate-300"><input type="checkbox"></td>
+          <td class="truncate border border-slate-300 px-2">Error</td>
+          <td class="truncate border border-slate-300 px-2">Comm</td>
+          <td class="truncate border border-slate-300 px-2 text-end">Late</td>
+          <td class="truncate border border-slate-300"><input type="checkbox"></td>
+          <td class="truncate border border-slate-300"><input type="checkbox"></td>
         </tr>
       </tbody>
     </table>
@@ -43,7 +70,5 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.parser {
-  width: 40rem;
-}
+
 </style>
