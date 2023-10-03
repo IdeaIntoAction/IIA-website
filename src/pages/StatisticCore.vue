@@ -11,7 +11,6 @@ export default {
     parserList()
       .then((response) => {
         this.parsers = response.data.parsers;
-        console.log(this.parsers);
       })
       .catch((error) => {
         catchError.call(this, error);

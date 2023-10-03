@@ -19,7 +19,7 @@ const baseURL = 'http://localhost:8080';
 // };
 export const parserList = () => axios.get(`${baseURL}/api/parser/all?limit=10&cursor=0`);
 
-// export const getPostId = postId => axios.get(`${baseURL}/post/?id=${postId}`);
+export const getParserId = parserId => axios.get(`${baseURL}/api/parser/?id=${parserId}`);
 
 // export const updatePost = post => {
 //   const sessionToken = localStorage.getItem('sessionToken');
