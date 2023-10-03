@@ -56,7 +56,7 @@ export default {
           <td class="truncate border border-slate-300 px-2"><a href={{parser.site.link}}>{{ parser.site }}</a></td>
           <td class="truncate border border-slate-300 px-2">Load</td>
           <td class="truncate border border-slate-300 px-2">Start</td>
-          <td class="truncate border border-slate-300 px-2"><router-link class="text-blue-600" to="/parserInfo">Link</router-link></td>
+          <td class="truncate border border-slate-300 px-2"><router-link class="text-blue-600" :to="{ name: 'parserInfo', params: { id: parser.id } }">Link</router-link></td>
           <td class="truncate border border-slate-300"><input type="checkbox"></td>
           <td class="truncate border border-slate-300 px-2">Error</td>
           <td class="truncate border border-slate-300 px-2">Comm</td>

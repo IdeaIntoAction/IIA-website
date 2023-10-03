@@ -10,7 +10,8 @@ const routes = [
     component: StatisticCore
   },
   {
-    path: '/parserInfo',
+    path: '/parserInfo/:id',
+    name:'parserInfo',
     component: StatisticSite
   },
 ];
