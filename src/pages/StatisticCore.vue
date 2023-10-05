@@ -1,5 +1,6 @@
 <script>
 import { parserList } from '../services/api';
+import { filterItems } from '../services/utility/filterUtils'
 
 export default {
   data() {
@@ -23,13 +24,7 @@ export default {
   },
   computed: {
     filteredParsers() {
-      return this.parsers.filter(parser => {
-        return (
-          (!this.filterConditions.act || parser.act) &&
-          (!this.filterConditions.stop || parser.stop) &&
-          (!this.filterConditions.work || parser.work)
-        );
-      });
+      return filterItems(this.parsers, this.filterConditions);
     },
   },
 };
