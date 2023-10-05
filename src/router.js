@@ -6,13 +6,14 @@ import StatisticSite from './pages/StatisticSite.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '',
     component: StatisticCore
   },
-  // {
-  //   path: '', name your clicked site and id {name/id}
-  //   component: StatisticSite
-  // },
+  {
+    path: '/parserInfo/:id',
+    name:'parserInfo',
+    component: StatisticSite
+  },
 ];
 
 const router = createRouter({
