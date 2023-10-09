@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { listParsers } from '../mock/mockParsersList';
 
 const baseURL = 'http://localhost:8080';
 
@@ -17,7 +18,7 @@ const baseURL = 'http://localhost:8080';
 //     }
 //   );
 // };
-export const parserList = () => axios.get(`${baseURL}/api/parser/all?limit=10&cursor=0`);
+export const parserList = () => Promise.resolve(listParsers);
 
 export const getParserId = parserId => axios.get(`${baseURL}/api/parser/?id=${parserId}`);
 

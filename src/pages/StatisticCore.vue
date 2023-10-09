@@ -1,6 +1,7 @@
 <script>
 import { parserList } from '../services/api';
 import { filterItems } from '../services/utility/filterUtils'
+import { listParsers } from '../mock/mockParsersList'
 
 export default {
   data() {
@@ -10,17 +11,17 @@ export default {
         act: false,
         stop: false,
         work: false,
-      }
+      },
     };
   },
   mounted() {
     parserList()
       .then((response) => {
-        this.parsers = response.data.parsers;
+        this.parsers = response;
       })
       .catch((error) => {
-        catchError.call(this, error);
-      });
+        console.log(this, error);
+      }); 
   },
   computed: {
     filteredParsers() {
@@ -43,7 +44,7 @@ export default {
           <th class="text-center w-auto">Adm</th>
           <th class="text-center w-10 h-10">Act</th>
           <th class="text-center w-40">Error</th>
-          <th class="text-center w-40">comm</th>
+          <th class="text-center w-40">Сomm</th>
           <th class="text-center w-10">Late</th>
           <th class="text-center w-10 h-10">Stop</th>
           <th class="text-center w-10 h-10">Work</th>
@@ -64,17 +65,17 @@ export default {
       <tbody v-for="parser in filteredParsers" :key="parser.id" class="mt-4">
         <tr class="text-center h-10">
           <td class="truncate border border-slate-300 px-2"><a :href="parser.site.link">{{ parser.site }}</a></td>
-          <td class="truncate border border-slate-300 px-2">Load</td>
-          <td class="truncate border border-slate-300 px-2">Start</td>
+          <td class="truncate border border-slate-300 px-2">{{parser.start}}</td>
+          <td class="truncate border border-slate-300 px-2">{{parser.load}}</td>
           <td class="truncate border border-slate-300 px-2">
             <router-link class="text-blue-600" :to="{ name: 'parserInfo', params: { id: parser.id } }">Link</router-link>
           </td>
           <td class="truncate border border-slate-300">
             <input v-model="parser.act" type="checkbox">
           </td>
-          <td class="truncate border border-slate-300 px-2">Error</td>
-          <td class="truncate border border-slate-300 px-2">Comm</td>
-          <td class="truncate border border-slate-300 px-2 text-end">Late</td>
+          <td class="truncate border border-slate-300 px-2">{{parser.error}}</td>
+          <td class="truncate border border-slate-300 px-2">{{parser.comm}}</td>
+          <td class="truncate border border-slate-300 px-2 text-end">{{parser.late}}</td>
           <td class="truncate border border-slate-300">
             <input v-model="parser.stop" type="checkbox" >
           </td>
