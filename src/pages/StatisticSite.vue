@@ -10,6 +10,7 @@ export default {
       parserInfo,
     };
   },
+  methods() {},
   mounted() {
     this.parserId = this.$route.params.id;
     getParserId(this.parserId)
