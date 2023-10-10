@@ -14,16 +14,16 @@ export default {
       },
     };
   },
-      mounted() {
-        parserList()
-          .then((response) => {
-            this.parsers = response;
-          })
-          .catch((error) => {
-            console.log(this, error);
-          });
-      };
-      computed: {
+  mounted() {
+    parserList()
+      .then((response) => {
+        this.parsers = response;
+      })
+      .catch((error) => {
+        console.log(this, error);
+      });
+  },
+  computed: {
     filteredParsers() {
       return filterItems(this.parsers, this.filterConditions);
     },

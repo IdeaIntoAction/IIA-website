@@ -25,7 +25,6 @@ module.exports = {
   },
   plugins: ['vue', 'node', 'prettier'],
   rules: {
-    'eslint.autoFixOnSave': true,
     'prettier/prettier': 'error',
   },
 };
