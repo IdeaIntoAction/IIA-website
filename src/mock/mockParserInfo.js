@@ -1,10 +1,10 @@
 export const parserInfo = {
-    parserId: null,
-    parserData: null,
-    mockData: {
-        site: "https://localhost:3000",
-        title: "parser Music",
-        code: `def parse(url = URL_TEMPLATE):
+  parserId: null,
+  parserData: null,
+  mockData: {
+    site: 'https://localhost:3000',
+    title: 'parser Music',
+    code: `def parse(url = URL_TEMPLATE):
             result_list = {'href': [], 'title': [], 'about': []}
             r = requests.get(url)
             soup = bs(r.text, "html.parser")
@@ -16,19 +16,19 @@ export const parserInfo = {
             for info in vacancies_info:
                 result_list['about'].append(info.text)
             return result_list`,
-        startParser: "03-10-2023: 15:00 mp",
-        endParser: "03-10-2023: 15:00 mp",
-        status: true,
-    },
-    mockDataSecond: {
-        error: "404",
-        region: "Ukraine", 
-        address: "Shirone Street 79",
-        timeStart: "02-10-2023: 15:00pm",
-        timeEnd: "02-10-2023: 19:00pm",
-        author: "no name",
-        company: "IT",
-        phone: "0631415352",
-        email: "test@gmail.com",
-    }
-} 
+    startParser: '03-10-2023: 15:00 mp',
+    endParser: '03-10-2023: 15:00 mp',
+    status: true
+  },
+  mockDataSecond: {
+    error: '404',
+    region: 'Ukraine',
+    address: 'Shirone Street 79',
+    timeStart: '02-10-2023: 15:00pm',
+    timeEnd: '02-10-2023: 19:00pm',
+    author: 'no name',
+    company: 'IT',
+    phone: '0631415352',
+    email: 'test@gmail.com'
+  }
+};

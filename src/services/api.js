@@ -20,7 +20,7 @@ const baseURL = 'http://localhost:8080';
 // };
 export const parserList = () => Promise.resolve(listParsers);
 
-export const getParserId = parserId => axios.get(`${baseURL}/api/parser/?id=${parserId}`);
+export const getParserId = (parserId) => axios.get(`${baseURL}/api/parser/?id=${parserId}`);
 
 // export const updatePost = post => {
 //   const sessionToken = localStorage.getItem('sessionToken');
