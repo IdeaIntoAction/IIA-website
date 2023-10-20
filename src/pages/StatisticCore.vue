@@ -10,7 +10,7 @@ export default {
       filterConditions: {
         act: false,
         stop: false,
-        work: false
+        work: false,
       }
     }
   },
