@@ -14,8 +14,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint . --fix .js,.vue src"
+      "pre-commit": "eslint . --ext .js,.vue src"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "axios": "^1.5.1",
@@ -34,6 +40,7 @@
     "eslint": "^8.51.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-standard": "^5.0.0",
+    "lint-staged": "^15.0.2",
     "postcss": "^8.4.30",
     "prettier": "^3.0.3",
     "sass": "^1.68.0",
