@@ -13,32 +13,165 @@ module.exports = {
     node: true
   },
   rules: {
-    semi: ['error', 'always'],
-    quotes: ['error', 'single'],
-    'no-var': 'error',
-    'prefer-const': 'error',
-    'arrow-parens': ['error', 'always'],
-    'arrow-spacing': 'error',
-    'object-curly-spacing': ['error', 'always'],
-    'array-bracket-spacing': ['error', 'never'],
-    'no-alert': 'error',
-    'max-len': ['warn', { code: 120 }],
-    'no-mixed-operators': 'error',
-    indent: ['error', 2],
-    eqeqeq: 'error',
-    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    semi: ['error', 'never'],
+    'vue/order-in-components': [
+      'error',
+      {
+        order: [
+          'el',
+          'name',
+          'key',
+          'parent',
+          'functional',
+          ['delimiters', 'comments'],
+          ['components', 'directives', 'filters'],
+          'extends',
+          'mixins',
+          ['provide', 'inject'],
+          'ROUTER_GUARDS',
+          'layout',
+          'middleware',
+          'validate',
+          'scrollToTop',
+          'transition',
+          'loading',
+          'inheritAttrs',
+          'model',
+          ['props', 'propsData'],
+          'emits',
+          'setup',
+          'asyncData',
+          'data',
+          'fetch',
+          'head',
+          'computed',
+          'watch',
+          'watchQuery',
+          'LIFECYCLE_HOOKS',
+          'methods',
+          ['template', 'render'],
+          'renderError'
+        ]
+      }
+    ],
+    'vue/no-irregular-whitespace': [
+      'error',
+      {
+        skipStrings: true,
+        skipComments: false,
+        skipRegExps: false,
+        skipTemplates: false,
+        skipHTMLAttributeValues: false,
+        skipHTMLTextContents: false
+      }
+    ],
+    'vue/component-definition-name-casing': ['error', 'PascalCase'],
+    'vue/match-component-file-name': [
+      'error',
+      {
+        extensions: ['vue'],
+        shouldMatchCase: false
+      }
+    ],
+    'vue/no-dupe-keys': [
+      'error',
+      {
+        groups: []
+      }
+    ],
+    'vue/component-name-in-template-casing': [
+      'error',
+      'kebab-case',
+      {
+        registeredComponentsOnly: true
+      }
+    ],
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'never',
+        objects: 'never',
+        imports: 'never',
+        exports: 'never',
+        functions: 'never'
+      }
+    ],
+    'no-debugger': 'error',
+    'arrow-parens': ['error', 'as-needed'],
     'no-plusplus': 'off',
     'constructor-super': 'off',
+    'no-mixed-operators': [
+      'error',
+      {
+        groups: [
+          ['+', '-', '*', '/', '%', '**'],
+          ['&', '|', '^', '~', '<<', '>>', '>>>'],
+          ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+          ['&&', '||'],
+          ['in', 'instanceof']
+        ],
+        allowSamePrecedence: true
+      }
+    ],
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-expressions': 'error',
     'no-param-reassign': 'off',
-    'vue/singleline-html-element-content-newline': [
+    'prefer-destructuring': [
       'error',
       {
-        ignoreWhenNoAttributes: false,
-        ignoreWhenEmpty: true
+        array: true,
+        object: true
+      },
+      {
+        enforceForRenamedProperties: false
+      }
+    ],
+    'no-bitwise': ['error', { allow: ['~'] }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'max-len': ['error', { code: 120 }],
+    'object-curly-newline': [
+      'error',
+      {
+        ObjectExpression: { multiline: true, consistent: true },
+        ObjectPattern: { multiline: true, consistent: true }
+      }
+    ],
+    'linebreak-style': ['error', 'unix'],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'always',
+          component: 'always'
+        },
+        svg: 'always',
+        math: 'always'
+      }
+    ],
+    'vue/html-indent': [
+      'error',
+      2,
+      {
+        attribute: 2, // Установите количество пробелов перед атрибутами в 2
+        baseIndent: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true,
+        ignores: []
+      }
+    ],
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: {
+          max: 1
+        },
+        multiline: {
+          max: 1
+        }
       }
     ]
   }
-};
+}

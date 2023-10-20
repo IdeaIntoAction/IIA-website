@@ -119,4 +119,4 @@ export const listParsers = [
     stop: false,
     work: true
   }
-];
+]
