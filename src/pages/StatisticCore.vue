@@ -8,9 +8,9 @@ export default {
     return {
       parsers: [],
       filterConditions: {
-        act: false, 
-        stop: false, 
-        work: false 
+        act: false,
+        stop: false,
+        work: false
       }
     }
   },

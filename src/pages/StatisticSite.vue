@@ -7,7 +7,7 @@ import { parserInfo } from '../mock/mockParserInfo'
 export default {
   data () {
     return {
-      parserInfo
+      parserInfo 
     }
   },
   mounted () {
