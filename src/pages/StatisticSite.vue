@@ -11,7 +11,7 @@ export default {
     }
   },
   mounted () {
-    this.parserId = this.$route.params.id  
+    this.parserId = this.$route.params.id    
     getParserId(this.parserId)  
       .then(response => {
         this.parserData = response.data   
