@@ -8,9 +8,9 @@ export default {
     return {
       parsers: [],
       filterConditions: {
-        act: false,
+        act: false, 
         stop: false,
-        work: false,
+        work: false
       }
     }
   },
@@ -25,7 +25,7 @@ export default {
         this.parsers = response
       })
       .catch(error => {
-        console.log(this, error),
+        console.log(this, error)
       })
   }
 }

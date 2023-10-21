@@ -155,7 +155,7 @@ module.exports = {
       'error',
       2,
       {
-        attribute: 2, // Установите количество пробелов перед атрибутами в 2
+        attribute: 2,
         baseIndent: 1,
         closeBracket: 0,
         alignAttributesVertically: true,
