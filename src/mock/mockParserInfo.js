@@ -31,4 +31,4 @@ export const parserInfo = {
     phone: '0631415352',
     email: 'test@gmail.com'
   }
-};
+}
