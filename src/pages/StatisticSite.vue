@@ -11,10 +11,10 @@ export default {
     }
   },
   mounted () {
-    this.parserId = this.$route.params.id    
-    getParserId(this.parserId)  
+    this.parserId = this.$route.params.id
+    getParserId(this.parserId)
       .then(response => {
-        this.parserData = response.data   
+        this.parserData = response.data
       })
       .catch(error => {
         console.log(this, error)
