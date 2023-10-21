@@ -11,13 +11,13 @@ export default {
     }
   },
   mounted () {
-    this.parserId = this.$route.params.id
-    getParserId(this.parserId)
-      .then(response => {
-        this.parserData = response.data
+    this.parserId = this.$route.params.id 
+    getParserId(this.parserId) 
+      .then(response => { 
+        this.parserData = response.data 
       })
       .catch(error => {
-        console.log(this, error)
+        console.log(this, error) 
       })
     Prism.highlightAll()
   }
