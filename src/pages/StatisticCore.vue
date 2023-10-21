@@ -25,7 +25,7 @@ export default {
         this.parsers = response
       })
       .catch(error => {
-        console.log(this, error)
+        console.log(this, error),
       })
   }
 }
