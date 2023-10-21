@@ -4,6 +4,8 @@ echo "Git Pre-Commit Hook"
 echo "===================================="
 
 # Running lint-staged
-npx lint-staged
-
-exit $?
+if npx lint-staged; then
+  exit 0
+else
+  exit 1
+fi
