@@ -7,17 +7,17 @@ import { parserInfo } from '../mock/mockParserInfo'
 export default {
   data () {
     return {
-      parserInfo 
+      parserInfo
     }
   },
   mounted () {
-    this.parserId = this.$route.params.id 
-    getParserId(this.parserId) 
-      .then(response => { 
-        this.parserData = response.data 
+    this.parserId = this.$route.params.id
+    getParserId(this.parserId)
+      .then(response => {
+        this.parserData = response.data
       })
       .catch(error => {
-        console.log(this, error) 
+        console.log(this, error)
       })
     Prism.highlightAll()
   }
