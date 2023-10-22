@@ -1,12 +1,19 @@
 <script>
 import { parserList } from '../services/api'
-import { filterItems } from '../services/utility/filterUtils'
+import { filterItems, filterText } from '../services/utility/filterUtils'
 // import { listParsers } from '../mock/mockParsersList';
 
 export default {
   data () {
     return {
       parsers: [],
+      filterTextContent: {
+        site: '',
+        start: '',
+        load: '',
+        error: '',
+        comm: ''
+      },
       filterConditions: {
         act: false,
         stop: false,
@@ -16,7 +23,9 @@ export default {
   },
   computed: {
     filteredParsers () {
-      return filterItems(this.parsers, this.filterConditions)
+      const filteredByItems = filterItems(this.parsers, this.filterConditions)
+      const filteredByText = filterText(filteredByItems, this.filterTextContent)
+      return filteredByText
     }
   },
   mounted () {
@@ -33,6 +42,7 @@ export default {
 
 <template>
   <div>
+    <div>{{ filterTextContent.site }}</div>
     <table class="table-auto m-auto border-separate border-spacing-2 border border-slate-400">
       <caption class="caption-top mb-2 mt-2 text-center font-extrabold">Parser List</caption>
       <thead>
@@ -51,15 +61,18 @@ export default {
         <tr>
           <th class="text-center">
             <input class="h-12 px-1 border border-slate-700 font-normal"
-                   type="text" />
+                   type="text"
+                   v-model="filterTextContent.site" />
           </th>
           <th class="text-center">
             <input class="h-12 px-1 border border-slate-700 font-normal"
-                   type="text" />
+                   type="text"
+                   v-model="filterTextContent.load"/>
           </th>
           <th class="text-center">
             <input class="h-12 px-1 border border-slate-700 font-normal"
-                   type="text" />
+                   type="text"
+                   v-model="filterTextContent.start"/>
           </th>
           <th class="text-center w-auto" />
           <th class="text-center w-10 h-10">
@@ -68,11 +81,13 @@ export default {
           </th>
           <th class="text-center">
             <input class="h-12 px-1 border border-slate-700 font-normal"
-                   type="text" />
+                   type="text"
+                   v-model="filterTextContent.error"/>
           </th>
           <th class="text-center">
             <input class="h-12 px-1 border border-slate-700 font-normal"
-                   type="text" />
+                   type="text"
+                   v-model="filterTextContent.comm"/>
           </th>
           <th class="text-center w-10" />
           <th class="text-center w-10 h-10">
