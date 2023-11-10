@@ -1,8 +1,12 @@
 <script>
 import { parserList } from '../services/api'
 import { filterItems, filterText } from '../services/utility/filterUtils'
+import addParser from '../component/addFileCard.vue'
 
 export default {
+  components: {
+    addParser
+  },
   data () {
     return {
       parsers: [],
@@ -18,7 +22,9 @@ export default {
         stop: false,
         work: false
       },
-      parsersCount: ''
+      parsersCount: '',
+      addFile: true
+
     }
   },
   computed: {
@@ -37,15 +43,27 @@ export default {
       .catch(error => {
         console.log(this, error)
       })
+  },
+  methods: {
+    handleFileUploadSuccess () {
+      this.addParser()
+    },
+    addParser () {
+      this.addFile = !this.addFile
+    }
   }
 }
 </script>
 
 <template>
   <div class="w-max m-auto">
+    <addParser
+        @file-uploaded-successfully="handleFileUploadSuccess"
+        :class="{hidden : addFile}"/>
     <div class="py-3 flex justify-between">
       <div>Parser List: You have <span class="font-bold">{{ parsersCount }}</span> parsers</div>
-      <button class="p-1 px-2 border-0 hover:bg-blue-900 bg-blue-600 rounded-lg text-white">Add parser</button>
+      <button @click="addParser"
+              class="p-1 px-2 border-0 hover:bg-blue-900 bg-blue-600 rounded-lg text-white">Add parser</button>
     </div>
     <table class="w-[1280px] border-collapse border border-slate-400 m-auto">
       <thead>
@@ -77,7 +95,7 @@ export default {
                    type="text"
                    v-model="filterTextContent.start"/>
           </th>
-          <th class="text-center w-auto border border-slate-300" />
+          <th class="text-center w-10 h-10 border border-slate-300" />
           <th class="text-center w-10 h-10 border border-slate-300">
             <input v-model="filterConditions.act"
                    type="checkbox" />
@@ -149,4 +167,9 @@ export default {
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.hohoho {
+  position: fixed;
+  margin: 0 auto;
+}
+</style>
