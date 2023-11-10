@@ -20,6 +20,8 @@ const baseURL = 'http://localhost:8080'
 // };
 export const parserList = () => Promise.resolve(listParsers)
 
+export const upLoadFile = parserFile => axios.post(`${baseURL}`, parserFile)
+
 export const getParserId = parserId => axios.get(`${baseURL}/api/parser/?id=${parserId}`)
 
 // export const updatePost = post => {
